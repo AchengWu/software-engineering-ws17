@@ -2,7 +2,35 @@ class Main {
   public static void main(String[] args)
   {
     String conversion = args[0];
-    String value = args[1];
+    double value = Double.parseDouble(args[1]);
+    double convalue;
+    
+    switch (conversion.toLowerCase()) {
+    case "dollartoeuro":
+    	UnitConverter DollarConverter = new DollarToEuroConverter();
+    	convalue = DollarConverter.convert(value);
+    	System.out.println(DollarConverter.toString() + " has converted " + value + " USD to " + convalue + " EUR!");
+        break;
+        
+    case "poundtoeuro":
+    	UnitConverter PoundConverter = new PoundToEuroConverter();
+    	convalue = PoundConverter.convert(value);
+    	System.out.println(PoundConverter.toString() + " has converted " + value + " Pound to " + convalue + " EUR!");
+        break;
+        
+    case "usgallontolitre": case "usgallonstolitres":
+    	UnitConverter USGallonConverter = new USGallonToLitreConverter();
+    	convalue = USGallonConverter.convert(value);
+    	System.out.println(USGallonConverter.toString() + " has converted " + value + " US gallons to " + convalue + " litres!");
+        break;
+        
+    case "imperialgallontolitre": case "imperialgallonstolitres":
+    	UnitConverter ImperialGallonConverter = new ImperialGallonToLitreConverter();
+    	convalue = ImperialGallonConverter.convert(value);
+    	System.out.println(ImperialGallonConverter.toString() + " has converted " + value + " Imperial gallons to " + convalue + " litres!");
+        break;
+    }
+        
 
     /*
      * TODO
@@ -11,9 +39,9 @@ class Main {
      *
     */
 
-    UnitConverter myConverter = new DollarToEuroConverter();
-    double aLotOfDollars = 10000;
-    double aLotOfEuros = myConverter.convert(aLotOfDollars);
-    System.out.println(myConverter.toString() + " has converted " + aLotOfDollars + " USD to " + aLotOfEuros + " EUR!");
+    
+    /*double aLotOfDollars = 10000;
+   double aLotOfEuros = myConverter.convert(aLotOfDollars);*/
+    
   }
 }
