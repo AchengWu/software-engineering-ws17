@@ -29,12 +29,12 @@ class Main {
     	convalue = ImperialGallonConverter.convert(value);
     	System.out.println(ImperialGallonConverter.toString() + " has converted " + value + " Imperial gallons to " + convalue + " litres!");
         break;
-    case "squarekilometerstohectare": case "squarekilometerstohectares":
+    case "squarekilometertohectare": case "squarekilometerstohectares":
     	UnitConverter SquarekilometersHectareConverter = new SquarekilometersToHectareConverter();
     	convalue = SquarekilometersHectareConverter.convert(value);
     	System.out.println(SquarekilometersHectareConverter.toString() + " has converted " + value + " Squaremeters to " + convalue + " Hectare!");
         break;
-    case "squarekilometerstoacre": case "squarekilometerstoacres":
+    case "squarekilometertoacre": case "squarekilometerstoacres":
     	UnitConverter SquarekilometersAcreConverter = new SquarekilometersToAcreConverter();
     	convalue = SquarekilometersAcreConverter.convert(value);
     	System.out.println(SquarekilometersAcreConverter.toString() + " has converted " + value + " Squaremeters to " + convalue + " Hectare!");

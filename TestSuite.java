@@ -43,10 +43,10 @@ public class TestSuite {
 	    assertEquals(0,result,0.001);
 		  }
 
-  @Test public static void USGLTest2() {
+  @Test public static void USGLTest2() { /*little double overflow test*/
 	    UnitConverter test = new USGallonToLitreConverter();
-	    double result = test.convert(Math.pow(2, 32));
-	    assertEquals(16256451215.36,result,0.001);
+	    double result = test.convert(Math.pow(2, 64));
+	    assertEquals(Math.pow(10, 7)*6982092631899.066,result,0.001);
 		  }
 
   @Test public static void USGLTest3() {
@@ -72,11 +72,13 @@ public class TestSuite {
 	    double result = test.convert(0.00000125);
 	    assertEquals(0.00000568261,result,0.001);
 		  }
+		  
   @Test public static void SHTest1() {
 	    UnitConverter test = new SquarekilometersToHectareConverter();
 	    double result = test.convert(20);
 	    assertEquals(0.2,result,0.001);
 		  }
+		  
   @Test public static void SHTest2() {
 	    UnitConverter test = new SquarekilometersToHectareConverter();
 	    double result = test.convert(0.5);
